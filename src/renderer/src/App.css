@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap")
+layer(base);
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@theme {
+  --color-sparkle-old-primary: #01e5ff;
+  --color-sparkle-primary: var(--color-primary);
+  --color-sparkle-text: var(--color-text);
+  --color-sparkle-text-secondary: var(--color-text-secondary);
+  --color-sparkle-text-muted: var(--color-text-muted);
+  --color-sparkle-bg: var(--color-bg);
+  --color-sparkle-card: var(--color-card);
+  --color-sparkle-border: var(--color-border);
+  --color-sparkle-secondary: var(--color-secondary);
+  --color-sparkle-accent: var(--color-accent);
+  --color-sparkle-border-secondary: var(--color-border-secondary);
+  --color-sparkle-old-secondary: #005fff;
+  --animate-border-spin: border-spin 3s linear infinite;
+
+  @keyframes border-spin {
+    from {
+      --angle: 0deg;
+    }
+    to {
+      --angle: 360deg;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  /* ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-sparkle-text-muted);
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-sparkle-primary);
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-sparkle-secondary);
+  } */
+  .light {
+    --color-sparkle-bg: #f0f0f0;
+    --color-sparkle-text: #1e293b;
+    --color-sparkle-text-dark: #334155;
+    --color-sparkle-text-darker: #475569;
+    --color-sparkle-text-secondary: #64748b;
+    --color-sparkle-text-muted: #94a3b8;
+    --color-sparkle-card: #ffffff;
+    --color-sparkle-border: #d5dae2;
+    --color-sparkle-border-secondary: #cbd5e1;
+    --color-sparkle-primary: #3b82f6;
+    --color-sparkle-secondary: #2dac7d;
+    --color-sparkle-accent: #f1f5f9;
+  }
+
+  :root {
+    --color-sparkle-bg: #0c121f;
+    --color-sparkle-text: #f0f4f8;
+    --color-sparkle-text-dark: #d3dbe4;
+    --color-sparkle-text-darker: #aab4c3;
+    --color-sparkle-text-secondary: #7e92a9;
+    --color-sparkle-text-muted: #4b5970;
+    --color-sparkle-card: #131c2c;
+    --color-sparkle-border: #1f2a3d;
+    --color-sparkle-border-secondary: #212f44;
+    --color-sparkle-primary: #4f90e6;
+    --color-sparkle-secondary: #3db58a;
+    --color-sparkle-accent: #243144;
+  }
+
+  .purple {
+    --color-sparkle-bg: #120f1c;
+    --color-sparkle-text: #e3d8ff;
+    --color-sparkle-text-dark: #cbb8ff;
+    --color-sparkle-text-darker: #b199ff;
+    --color-sparkle-text-secondary: #9a85e8;
+    --color-sparkle-text-muted: #4a3a6b;
+    --color-sparkle-card: #1a1430;
+    --color-sparkle-border: #2f1b60;
+    --color-sparkle-border-secondary: #3a2178;
+    --color-sparkle-primary: #8e44ff;
+    --color-sparkle-secondary: #3463ff;
+    --color-sparkle-accent: #3b1673;
+  }
+
+  .gray {
+    --color-sparkle-bg: #111214;
+    --color-sparkle-text: #f5f6fa;
+    --color-sparkle-text-dark: #e0e2e6;
+    --color-sparkle-text-darker: #c8ccd2;
+    --color-sparkle-text-secondary: #aeb3bb;
+    --color-sparkle-text-muted: #7a7f87;
+    --color-sparkle-card: #18191b;
+    --color-sparkle-border: #26272b;
+    --color-sparkle-border-secondary: #232426;
+    --color-sparkle-primary: #6366f1;
+    --color-sparkle-secondary: #b981f8;
+    --color-sparkle-accent: #232324;
+  }
+
+  .classic {
+    --color-sparkle-bg: #0f172a;
+    --color-sparkle-text: #ffffff;
+    --color-sparkle-text-dark: #e6e6e6;
+    --color-sparkle-text-darker: #cccccc;
+    --color-sparkle-text-secondary: #94a3b8;
+    --color-sparkle-text-muted: #475569;
+    --color-sparkle-card: #162033;
+    --color-sparkle-border: #253144;
+    --color-sparkle-border-secondary: #1e293b;
+    --color-sparkle-primary: #3b82f6;
+    --color-sparkle-secondary: #2dac7d;
+    --color-sparkle-accent: #2e394b;
+  }
+  .Toastify__toast {
+    background-color: var(--color-sparkle-card) !important;
+    border: 1px solid var(--color-sparkle-border) !important;
+    color: var(--color-sparkle-text) !important;
+    --toastify-icon-color-success: var(--color-sparkle-secondary) !important;
+  }
+  .Toastify__close-button {
+    color: var(--color-sparkle-text-secondary) !important;
+  }
+}
+
+@layer base {
+  html {
+    font-family: "Poppins", "Noto Sans", sans-serif;
+    font-synthesis: none;
+  }
+}
+@layer utilities {
+  * {
+    user-select: none;
+  }
+}
+
+.recharts-line path {
+  stroke: var(--color-sparkle-primary);
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+body {
+  scrollbar-color: var(--color-sparkle-primary) var(--color-sparkle-bg);
+}

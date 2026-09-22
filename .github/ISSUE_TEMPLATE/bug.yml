@@ -1,0 +1,95 @@
+name: 🐞 Bug Report
+description: Report a bug to help improve Sparkle
+title: "[Bug]: "
+assignees:
+  - thedogecraft
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        ## ⚠️ Before submitting
+
+        Please make sure you are using the latest version of Sparkle. (Older Versions are not supported and will be closed.)
+
+        Provide as much detail as possible so the issue can be reproduced and
+        fixed quickly.
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: Clearly explain what the problem is.
+      placeholder: Sparkle crashes when opening the Tweaks tab.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce this issue?
+      placeholder: |
+        1. Open Sparkle
+        2. Go to Tweaks
+        3. Click on "..."
+        4. Crash occurs
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sparkle log output
+      description: >-
+        Paste your log file here.
+
+        You can find it by pressing Win + R and entering:
+        %USERPROFILE%\AppData\Roaming\sparkle\logs\main.log
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Sparkle Version
+      description: What version of Sparkle are you using?
+      placeholder: 2.16.0
+    validations:
+      required: true
+  - type: input
+    id: windows_version
+    attributes:
+      label: Windows Version
+      description: Your Windows version/build
+      placeholder: Windows 11 25H2
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How bad is this issue?
+      options:
+        - Low (minor issue)
+        - Medium (affects usability)
+        - High (breaks major features)
+        - Critical (app unusable / crash)
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Add anything else that might help (screenshots, configs, etc.)
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before submitting
+      options:
+        - label: I have checked existing issues to avoid duplicates
+          required: true
+        - label: I am using the latest version of Sparkle
+          required: true
+        - label: I have included logs and steps to reproduce
+          required: true
+  - type: markdown
+    attributes:
+      value: >-
+        Thanks for helping improve Sparkle ✨

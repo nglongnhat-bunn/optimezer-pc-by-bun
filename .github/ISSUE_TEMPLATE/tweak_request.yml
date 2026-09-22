@@ -1,0 +1,92 @@
+name: Tweak Request / Suggestion
+description: Suggest a new tweak for Sparkle
+title: "[Tweak Request]: "
+labels:
+  - enhancement
+assignees:
+  - thedogecraft
+body:
+  - type: markdown
+    attributes:
+      value: |-
+        ## 📘 Before You Start
+        Please read the tweak creation guidelines before submitting:
+        👉 https://docs.getsparkle.net/creating-tweaks/
+        Submissions that do not follow the format or lack detail may be closed.
+  - type: textarea
+    id: tweak_description
+    attributes:
+      label: What is the tweak?
+      description: Clearly explain what the tweak does.
+      placeholder: This tweak disables Windows Copilot completely from the system.
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Why should this tweak be added?
+      description: Explain the benefit to users.
+      placeholder: >-
+        Most users don’t use Copilot and it consumes system resources
+        unnecessarily.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Select the category that best fits this tweak.
+      options:
+        - Performance
+        - Privacy
+        - Debloat
+        - UI/UX
+        - Security
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: risk_level
+    attributes:
+      label: Risk Level
+      description: Estimate how risky this tweak is.
+      options:
+        - Safe
+        - Caution
+        - Risky
+    validations:
+      required: true
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Suggested Implementation
+      description: >-
+        Provide technical details if possible. Follow the format shown in the
+        docs (registry edits, PowerShell commands, etc).
+      placeholder: |
+        Registry:
+        HKLM\Software\...
+
+        PowerShell:
+        Disable-WindowsFeature ...
+  - type: input
+    id: windows_version
+    attributes:
+      label: Windows Version (Optional)
+      description: Helps determine compatibility
+      placeholder: Windows 11 25H2
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Before submitting
+      options:
+        - label: I have read the tweak creation documentation
+          required: true
+        - label: I have followed the format outlined in the documentation
+          required: true
+        - label: I have checked that this tweak has not already been suggested
+          required: true
+  - type: markdown
+    attributes:
+      value: >-
+        Thanks for contributing to Sparkle ✨

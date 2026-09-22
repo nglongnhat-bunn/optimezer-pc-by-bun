@@ -1,0 +1,80 @@
+name: 🔧 Feature Request
+description: Suggest a new feature or improvement for Sparkle
+title: "[Feature Request]: "
+labels:
+  - enhancement
+assignees:
+  - thedogecraft
+body:
+  - type: markdown
+    attributes:
+      value: |-
+        ## 💡 Before submitting
+        Please check existing issues to avoid duplicates.
+        Try to clearly explain the problem and how your feature would solve it.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the issue or limitation you're experiencing.
+      placeholder: It's difficult to manage a large number of tweaks efficiently.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What would you like to see added or changed?
+      placeholder: Add categories, search, and filtering for tweaks.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Feature Category
+      description: What area does this feature relate to?
+      options:
+        - UI/UX
+        - Performance
+        - Tweaks System
+        - Automation
+        - Integrations
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: How important is this feature?
+      options:
+        - Nice to have
+        - Useful
+        - Important
+        - Critical
+    validations:
+      required: true
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Possible implementation (Optional)
+      description: If you have technical ideas, describe them here.
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Mockups / Examples (Optional)
+      description: Add screenshots, links, or examples if applicable.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before submitting
+      options:
+        - label: I have checked existing issues to avoid duplicates
+          required: true
+        - label: This is not a tweak request (use the tweak template instead)
+          required: true
+  - type: markdown
+    attributes:
+      value: >-
+        Thanks for helping improve Sparkle ✨   Well-explained feature requests
+        help shape the future of the app.
